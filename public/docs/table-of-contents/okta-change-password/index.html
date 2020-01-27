@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Okta Reset/Change Password"><meta property="og:title" content="Okta Reset/Change Password" />
+<meta property="og:description" content="How-to Enable Reset Password Through Okta Feature and Use It This document explains how-to enable Reset Password feature on Okta and how-to use it.
+ Note
+Resetting/updating password through Okta will be propagated into Active Directory and Email Server, immediately. Therefor; Okta, Active Directory and Email accounts eventually will have the same password. To sync your laptop password with the new password in real-time, the VPN must be connected, otherwise; the old password must be used to login into laptop (either Windows or macOS)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/table-of-contents/okta-change-password/" />
+<meta property="article:published_time" content="2020-01-24T11:25:00-06:00" />
+<meta property="article:modified_time" content="2020-01-24T11:25:00-06:00" />
+<title>Okta Reset/Change Password | DMD ITD Public Site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.b7fe34b8a4c4da05b2690b4aacfa71ddce0668cc6da3abb67dd3946844125444.css" integrity="sha256-t/40uKTE2gWyaQtKrPpx3c4GaMxto6u2fdOUaEQSVEQ=">
+
+
+<script defer src="/en.search.min.21e8661043e91e3f7f471ed676b50310589f469b029aaafc4ddab8eb31efec89.js" integrity="sha256-IehmEEPpHj9/Rx7WdrUDEFifRpsCmqr8Tdq46zHv7Ik="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png"> 
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><br>
+    <br>
+    <span>DMD ITD Public Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/docs/table-of-contents/" >
+      Table of Contents
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/contact-itd/" >
+      Contact ITD
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/okta-change-password/"  class="active">
+      Okta Reset/Change Password
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/sftp-ssh2/" >
+      SSH Keys for Secure FTP #2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/page-one/" >
+      ITD Page One
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      <span>Shortcodes</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Okta Reset/Change Password</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pre-requirements-and-steps-to-reset-password">Pre-Requirements and Steps to Reset Password</a>
+      <ul>
+        <li><a href="#pre-requirements">Pre-Requirements</a></li>
+        <li><a href="#steps-to-rest-password">Steps to Rest Password</a></li>
+      </ul>
+    </li>
+    <li><a href="#instructions-to-enable-forget-password-text-message-feature">Instructions to Enable &ldquo;Forget Password Text Message&rdquo; Feature</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+<article class="markdown"><h1 id="how-to-enable-reset-password-through-okta-feature-and-use-it">How-to Enable Reset Password Through Okta Feature and Use It</h1>
+<p>This document explains how-to enable Reset Password feature on Okta and how-to use it.</p>
+<hr>
+<blockquote class="book-hint danger">
+  <strong>Note</strong><br>
+Resetting/updating password through Okta will be propagated into Active Directory and Email Server, immediately. Therefor; Okta, Active Directory and Email accounts eventually will have the same password. To sync your laptop password with the new password in real-time, the VPN must be connected, otherwise; the old password must be used to login into laptop (either Windows or macOS). When your laptop is connected to the VPN or Office Network, the laptop password is synced immediately.
+</blockquote>
+
+<h2 id="pre-requirements-and-steps-to-reset-password">Pre-Requirements and Steps to Reset Password</h2>
+<h3 id="pre-requirements">Pre-Requirements</h3>
+<ol>
+<li>To enable resetting password, the <strong>&ldquo;Forget Password Text Message&rdquo;</strong> feature must be enabled. See the <a href="#instructions-to-enable-forget-password-text-message-feature"><strong>instructions to &hellip;</strong></a> below.</li>
+<li>Make sure you have already set and know your <strong>&ldquo;Forgotten Password Question&rdquo;</strong> and its <strong>answer</strong>. This question and answer can be found and edited at: <strong>Okta &gt; Under Your Name &gt; Settings &gt; Forgotten Password Question</strong></li>
+</ol>
+<blockquote class="book-hint danger">
+  <strong>Note</strong><br>
+Before resetting the password through OKTA, Outlook must be closed as well as on your smartphone and any other mobile devices must be offline (if you have DMD email account configured on any mobile device).
+</blockquote>
+
+<h3 id="steps-to-rest-password">Steps to Rest Password</h3>
+<ol>
+<li>Open Okta</li>
+<li>Click &ldquo;Need help signing in?&rdquo;</li>
+<li>Click &ldquo;Forgot Password&rdquo;</li>
+<li>Follow the steps as they are asked</li>
+<li>After resetting password, bring outlook and mobile devices online one-by-one and enter the new password when it is asked.</li>
+</ol>
+<hr>
+<h2 id="instructions-to-enable-forget-password-text-message-feature">Instructions to Enable &ldquo;Forget Password Text Message&rdquo; Feature</h2>
+
+
+
+
+<div class="book-tabs">
+
+  <input type="radio" class="hidden" name="tabs-tabs_users" id="tabs-tabs_users-0" checked="checked" />
+  <label for="tabs-tabs_users-0">
+    Current Users
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h1 id="current-users">Current Users</h1>
+<ol>
+<li>Login into Okta with the current credentials</li>
+<li>You will be asked to update your profile by adding &ldquo;phone number&rdquo;</li>
+<li>Verify the entered phone number by clicking &ldquo;Send Code&rdquo; and entering the received passcode.</li>
+</ol>
+  </div>
+
+  <input type="radio" class="hidden" name="tabs-tabs_users" id="tabs-tabs_users-1"  />
+  <label for="tabs-tabs_users-1">
+    New Users
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h1 id="new-users">New Users</h1>
+<ol>
+<li>Login into Okta with the current credentials</li>
+<li>Fill out the requested fields on the form:</li>
+</ol>
+<ul>
+<li>Secondary Email: is optional - It can be your personal email asl well. Already DMD email account has enrolled for each user.</li>
+<li>Choose a forgot password question: required.</li>
+<li>Answer is required. At least 4 characters for the answer.</li>
+<li>Add a phone number to resett your password or unlock your account using SMS (optional), however; it strongly recommended. <strong>Country</strong> , <strong>Phone number</strong></li>
+</ul>
+<ol start="3">
+<li>Verify the phone number by clicking &ldquo;Send Code&rdquo; and entering the received passcode</li>
+<li>Click &ldquo;Create My Account&rdquo;</li>
+</ol>
+  </div>
+
+</div>
+
+<hr>
+<ul>
+<li>Author: M. Miryani | Created: 2020-01-24T11:25:00-06:00</li>
+</ul>
+<hr>
+</article>
+ 
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      </footer>
+      <b> Published Date:  Friday - January 24, 2020</b>
+<br>
+<br>
+
+
+
+
+<div class="footer">
+  <p>© 2020 DMD Marketing Corp.</p>
+</div>
+
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pre-requirements-and-steps-to-reset-password">Pre-Requirements and Steps to Reset Password</a>
+      <ul>
+        <li><a href="#pre-requirements">Pre-Requirements</a></li>
+        <li><a href="#steps-to-rest-password">Steps to Rest Password</a></li>
+      </ul>
+    </li>
+    <li><a href="#instructions-to-enable-forget-password-text-message-feature">Instructions to Enable &ldquo;Forget Password Text Message&rdquo; Feature</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

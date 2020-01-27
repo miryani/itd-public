@@ -1,0 +1,35 @@
+<style>
+  #parent {
+    position: absolute;
+  }
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  div.relative {
+    position: relative;
+    width: 1920px;
+    height: 125px;
+  }
+
+  div.absolute {
+    position: fixed;
+    background-image: url('http://localhost:1313/images/header_bg.png');
+    padding: 0px 0;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+  }
+</style>
+
+
+
+</div>
+<div class="relative">
+  <div class="absolute">
+    <div class="wrapper">
+      <img id="logo" src="http://localhost:1313/images/dmdlogo-white.png" alt="Logo" width="200">
+    </div>
+  </div>
+</div>

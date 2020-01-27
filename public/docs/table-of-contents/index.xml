@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DMD ITD Public Site</title>
+    <link>http://example.org/docs/table-of-contents/</link>
+    <description>Recent content on DMD ITD Public Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jan 2020 15:11:09 -0600</lastBuildDate>
+    
+	<atom:link href="http://example.org/docs/table-of-contents/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Contact ITD</title>
+      <link>http://example.org/docs/table-of-contents/contact-itd/</link>
+      <pubDate>Fri, 24 Jan 2020 15:11:09 -0600</pubDate>
+      
+      <guid>http://example.org/docs/table-of-contents/contact-itd/</guid>
+      <description>You may contact us by sending emails through: helpdesk at dmdconnects dot com </description>
+    </item>
+    
+    <item>
+      <title>Okta Reset/Change Password</title>
+      <link>http://example.org/docs/table-of-contents/okta-change-password/</link>
+      <pubDate>Fri, 24 Jan 2020 11:25:00 -0600</pubDate>
+      
+      <guid>http://example.org/docs/table-of-contents/okta-change-password/</guid>
+      <description>How-to Enable Reset Password Through Okta Feature and Use It This document explains how-to enable Reset Password feature on Okta and how-to use it.
+ Note
+Resetting/updating password through Okta will be propagated into Active Directory and Email Server, immediately. Therefor; Okta, Active Directory and Email accounts eventually will have the same password. To sync your laptop password with the new password in real-time, the VPN must be connected, otherwise; the old password must be used to login into laptop (either Windows or macOS).</description>
+    </item>
+    
+    <item>
+      <title>SSH Keys for Secure FTP #2</title>
+      <link>http://example.org/docs/table-of-contents/sftp-ssh2/</link>
+      <pubDate>Thu, 23 Jan 2020 09:24:33 -0600</pubDate>
+      
+      <guid>http://example.org/docs/table-of-contents/sftp-ssh2/</guid>
+      <description>Generating a Secure Shell (SSH) Public/Private Key Pair Several tools exist to generate SSH public/private key pairs. The following sections illustrate how to generate an SSH key pair on Windows and UNIX, UNIX-like platforms.
+ Steps to Generate SSH Key Pair Windows  Generating an SSH Key Pair on Windows Using the PuTTYgen Program The PuTTYgen program is part of PuTTY, an open source networking client for the Windows platform. To generate an SSH key pair on Windows using the PuTTYgen program:</description>
+    </item>
+    
+    <item>
+      <title>ITD Page One</title>
+      <link>http://example.org/docs/table-of-contents/page-one/</link>
+      <pubDate>Sun, 18 Nov 2018 09:24:33 -0600</pubDate>
+      
+      <guid>http://example.org/docs/table-of-contents/page-one/</guid>
+      <description>ITD Page One Welcome to &amp;ldquo;Page One&amp;rdquo;, a brief guide to getting started with the many technologies and tools available to you at DMD.
+This guide is provided by the DMD IT &amp;amp; DevOps team, or ITD for short. There are many other training and how-to guides available to you, but this should get you up and running as quickly as possible, and then point you to the resources available for further information.</description>
+    </item>
+    
+  </channel>
+</rss>

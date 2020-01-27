@@ -11,5 +11,5 @@ features = []
 min_version = "0.60"
 
 [author]
-  name = "Alex Shpak"
-  homepage = "https://github.com/alex-shpak/"
+  # name = "Alex Shpak"
+  # homepage = "https://github.com/alex-shpak/"

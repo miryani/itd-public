@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SSH Keys for Secure FTP #2"><meta property="og:title" content="SSH Keys for Secure FTP #2" />
+<meta property="og:description" content="Generating a Secure Shell (SSH) Public/Private Key Pair Several tools exist to generate SSH public/private key pairs. The following sections illustrate how to generate an SSH key pair on Windows and UNIX, UNIX-like platforms.
+ Steps to Generate SSH Key Pair Windows  Generating an SSH Key Pair on Windows Using the PuTTYgen Program The PuTTYgen program is part of PuTTY, an open source networking client for the Windows platform. To generate an SSH key pair on Windows using the PuTTYgen program:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/table-of-contents/sftp-ssh2/" />
+<meta property="article:published_time" content="2020-01-23T09:24:33-06:00" />
+<meta property="article:modified_time" content="2020-01-23T09:24:33-06:00" />
+<title>SSH Keys for Secure FTP #2 | DMD ITD Public Site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.b7fe34b8a4c4da05b2690b4aacfa71ddce0668cc6da3abb67dd3946844125444.css" integrity="sha256-t/40uKTE2gWyaQtKrPpx3c4GaMxto6u2fdOUaEQSVEQ=">
+
+
+<script defer src="/en.search.min.21e8661043e91e3f7f471ed676b50310589f469b029aaafc4ddab8eb31efec89.js" integrity="sha256-IehmEEPpHj9/Rx7WdrUDEFifRpsCmqr8Tdq46zHv7Ik="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png"> 
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><br>
+    <br>
+    <span>DMD ITD Public Site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li >
+    
+      
+
+  <a href="/docs/table-of-contents/" >
+      Table of Contents
+  </a>
+
+
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/contact-itd/" >
+      Contact ITD
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/okta-change-password/" >
+      Okta Reset/Change Password
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/sftp-ssh2/"  class="active">
+      SSH Keys for Secure FTP #2
+  </a>
+
+</li>
+      
+    
+      
+        <li>
+
+  <a href="/docs/table-of-contents/page-one/" >
+      ITD Page One
+  </a>
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li  class="book-section-flat" >
+    
+      <span>Shortcodes</span>
+    
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+<script>
+(function() {
+  var menu = document.querySelector("aside.book-menu nav");
+  addEventListener("beforeunload", function(event) {
+    localStorage.setItem("menu.scrollTop", menu.scrollTop);
+  });
+  menu.scrollTop = localStorage.getItem("menu.scrollTop");
+})();
+</script>
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>SSH Keys for Secure FTP #2</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#steps-to-generate-ssh-key-pair">Steps to Generate SSH Key Pair</a></li>
+    <li><a href="#file-access-via-ftp-clients">File Access via FTP Client(s)</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+<article class="markdown"><h1 id="generating-a-secure-shell-ssh-publicprivate-key-pair">Generating a Secure Shell (SSH) Public/Private Key Pair</h1>
+<p>Several tools exist to generate SSH public/private key pairs. The following sections illustrate how to generate an SSH key pair on <strong>Windows</strong> and <strong>UNIX, UNIX-like</strong> platforms.</p>
+<hr>
+<h2 id="steps-to-generate-ssh-key-pair">Steps to Generate SSH Key Pair</h2>
+
+
+
+
+<div class="book-tabs">
+
+  <input type="radio" class="hidden" name="tabs-tabs_os" id="tabs-tabs_os-0" checked="checked" />
+  <label for="tabs-tabs_os-0">
+    Windows
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h4 id="generating-an-ssh-key-pair-on-windows-using-the-puttygen-program">Generating an SSH Key Pair on Windows Using the PuTTYgen Program</h4>
+<p>The PuTTYgen program is part of PuTTY, an open source networking client for the Windows platform. To generate an SSH key pair on Windows using the PuTTYgen program:</p>
+<ol>
+<li>
+<p>Download and install the full PuTTY package, or the individual PuTTYgen application. To download PuTTY or PuTTYgen, go to <a href="http://www.putty.org">http://www.putty.org</a> and click the download link.Step 1. Download and install the full PuTTY package, or the individual PuTTYgen application.</p>
+</li>
+<li>
+<p>Run the PuTTYgen program. When the PuTTY Key Generator window is displayed; Set the &ldquo;Type of key to generate&rdquo; option to &ldquo;RSA&rdquo;. In the &ldquo;Number of bits in a generated key&rdquo; box, enter 2048.</p>
+</li>
+<li>
+<p>Click Generate to generate a public/private key pair. As the key is being generated, move the mouse around the blank area as directed.</p>
+</li>
+<li>
+<p>Enter a passphrase for the private key in the <strong>&ldquo;Key passphrase&rdquo;</strong> box and reenter it in the <strong>&ldquo;Confirm passphrase&rdquo;</strong> box. While a passphrase is not required, you should specify one as a security measure to protect the private key from unauthorized use. When you specify a passphrase, a user must enter the passphrase every time the private key is used.</p>
+</li>
+<li>
+<p>Delete the auto-generated text within the <strong>&ldquo;Key comment&rdquo;</strong> box, and replace it with your company assigned email address</p>
+</li>
+<li>
+<p>Click <strong>&ldquo;Save Private Key&rdquo;</strong> to save the private key to a file. To adhere to file-naming conventions, you should give the private key file an extension of .ppk (PuTTY private key).</p>
+</li>
+</ol>
+<p><em>The .ppk file extension indicates that the private key is in PuTTY’s proprietary format. You must use a key of this format when using PuTTY as the SSH client. It cannot be used with other SSH client tools.</em></p>
+<ol start="7">
+<li>
+<p>Select all of the characters in the Public key for pasting into OpenSSH authorized_keys file box. Ensure that you have selected all the characters, not just the ones you can see in the narrow window.</p>
+</li>
+<li>
+<p>Open a text editor and paste the characters, just as you copied them. Do not insert any line breaks. Save the text file in the same folder where you saved the private key, using the .txt extension to indicate that the file contains a public key.</p>
+</li>
+<li>
+<p>If you or others are going to use an SSH client that requires the OpenSSH format for private keys (such as the ssh utility on Linux), export the private key: On the Conversions menu, choose Export OpenSSH key. Save the private key in OpenSSH format in the same folder where you saved the private key in &ldquo;.ppk&rdquo; format, using an extension such as &ldquo;.openssh&rdquo; to indicate the file's content.</p>
+</li>
+</ol>
+
+  </div>
+
+  <input type="radio" class="hidden" name="tabs-tabs_os" id="tabs-tabs_os-1"  />
+  <label for="tabs-tabs_os-1">
+    Linux
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h4 id="generating-an-ssh-key-pair-on-unix-and-unix-like-platforms-using-the-ssh-keygen-utility">Generating an SSH Key Pair on UNIX and UNIX-Like Platforms Using the ssh-keygen Utility</h4>
+<ol>
+<li>
+<p>Navigate to your home directory: <strong>cd $HOME</strong></p>
+</li>
+<li>
+<p>Run the ssh-keygen utility, substituting filename for the name of a file to store your private key and email_address for your email address: <strong>ssh-keygen –b 2048 –t rsa –C email_address–f filename</strong>. The ssh-keygen utility prompts you for a passphrase for the private key.</p>
+</li>
+<li>
+<p>Enter a passphrase for the private key, or press Enter to create a private key without a passphrase: Enter passphrase (empty for no passphrase): passphrase While a passphrase is not required, you should specify one as a security measure to protect the private key from unauthorized</p>
+</li>
+<li>
+<p>The ssh-keygen utility prompts you to enter the passphrase again. Enter the passphrase again, or press Enter again to continue creating a private key without a passphrase.</p>
+</li>
+<li>
+<p>The ssh-keygen utility displays a message indicating that the private key has been saved as <strong>filename</strong> and the public key has been saved as <strong>filename.pub</strong> It also displays information about the key fingerprint and randomart image.</p>
+</li>
+</ol>
+
+  </div>
+
+</div>
+
+<hr>
+<h2 id="file-access-via-ftp-clients">File Access via FTP Client(s)</h2>
+<p>After your Customer Success Manager notifies you that your Public Key has been associated with the SFTP AIM Feed File directory, you will need to use an installed FTP client such as FileZilla or WinSCP to securely login to the directory.</p>
+<ul>
+<li>FileZilla: <a href="https://filezilla-project.org">https://filezilla-project.org</a></li>
+<li>WinSCP: <a href="https://winscp.net/eng/download.php">https://winscp.net/eng/download.php</a></li>
+</ul>
+<p>Once your chosen application is installed:</p>
+
+
+
+
+<div class="book-tabs">
+
+  <input type="radio" class="hidden" name="tabs-tabs_app" id="tabs-tabs_app-0" checked="checked" />
+  <label for="tabs-tabs_app-0">
+    FileZilla
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h4 id="directions-for-filezilla">Directions for FileZilla</h4>
+<ol>
+<li>
+<p>Open the application From the top navigation, select Edit Click on &ldquo;Settings&rdquo; Click on &ldquo;SFTP&rdquo; Click &ldquo;Add key file&rdquo; Use Windows Explorer to navigate to the file that holds your previously saved Private Key (.ppk) file. Select the file and click &ldquo;Open&rdquo; Click OK</p>
+</li>
+<li>
+<p>Enter <strong>dmd-ftp.dmdconnects.com</strong> in the &ldquo;host&rdquo; field</p>
+</li>
+<li>
+<p>Enter the <strong>DMD supplied username + property name</strong>. in the &ldquo;username&rdquo; field Example: dmd-username.dmd-property</p>
+</li>
+<li>
+<p>Enter the passphrase/password you generated in the &ldquo;key pass phrase&rdquo; (step 3 of &ldquo;Generating an SSH Key Pair on UNIX and UNIX-Like Platforms Using the ssh-keygen Utility&rdquo; or step 4 of &ldquo;Generating an SSH Key Pair on Windows Using the PuTTYgen Program&rdquo;)</p>
+</li>
+<li>
+<p>In the &ldquo;port&rdquo; field, enter <strong>22</strong></p>
+</li>
+<li>
+<p>Click &ldquo;connect&rdquo;</p>
+</li>
+<li>
+<p>You will be logged into the directory containing the AIM Feed Files for the selected property. Drag the file to the directory on your local machine where you would like to store the file.</p>
+</li>
+</ol>
+
+  </div>
+
+  <input type="radio" class="hidden" name="tabs-tabs_app" id="tabs-tabs_app-1"  />
+  <label for="tabs-tabs_app-1">
+    WinSCP
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h4 id="directions-for-winscp">Directions for WinSCP</h4>
+<ol>
+<li>
+<p>Open the application From the Login window click on the &ldquo;Advanced&rdquo; drop down button Click &ldquo;Advanced&rdquo; In the Advanced Site Settings window, clicks &ldquo;Authentication&rdquo; under &ldquo;SSH&rdquo; In the &ldquo;Private key file&rdquo; field click the button on the far right Navigate to the location of your saved Private Key File, select the file and click &ldquo;Open&rdquo; Click &ldquo;OK&rdquo; and you will be returned to the Login window</p>
+</li>
+<li>
+<p>Enter <strong>dmd-ftp.dmdconnects.com</strong> in the &ldquo;host&rdquo; field</p>
+</li>
+<li>
+<p>In the &ldquo;port&rdquo; field, enter 22</p>
+</li>
+<li>
+<p>Enter the DMD supplied username + property name. in the &ldquo;username&rdquo; field Example: dmd-username.dmd-property</p>
+</li>
+<li>
+<p>Do Not enter a password</p>
+</li>
+<li>
+<p>Click Login You may see an advisory window – Click OK</p>
+</li>
+<li>
+<p>Enter the passphrase/password you generated in the &ldquo;key pass phrase&rdquo; (step 3 of &ldquo;Generating an SSH Key Pair on UNIX and UNIX-Like Platforms Using the ssh-keygen Utility&rdquo; or step 4 of &ldquo;Generating an SSH Key Pair on Windows Using the PuTTYgen Program&rdquo;) in the &ldquo;key passphrase&rdquo; window</p>
+</li>
+<li>
+<p>Click &ldquo;OK&rdquo;</p>
+</li>
+<li>
+<p>You will be logged into the directory containing the AIM Feed Files for the selected property. Drag the file to the directory on your local machine where you would like to store the file.</p>
+</li>
+</ol>
+
+  </div>
+
+</div>
+
+<hr>
+<ul>
+<li>Ref: <a href="http://docs.dmdconnects.com/resources/aim-feed-ssh-key-generation">AIM Feed SSH Key Generation</a></li>
+<li>Author: M. Miryani</li>
+</ul>
+<hr>
+</article>
+ 
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+      </footer>
+      <b> Published Date:  Thursday - January 23, 2020</b>
+<br>
+<br>
+
+
+
+
+<div class="footer">
+  <p>© 2020 DMD Marketing Corp.</p>
+</div>
+
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#steps-to-generate-ssh-key-pair">Steps to Generate SSH Key Pair</a></li>
+    <li><a href="#file-access-via-ftp-clients">File Access via FTP Client(s)</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

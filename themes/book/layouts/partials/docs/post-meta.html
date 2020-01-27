@@ -1,4 +1,4 @@
-{{ $dateFormat := (default "January 2, 2006" .Site.Params.BookDateFormat) }}
+{{ $dateFormat := (default "Monday January 2, 2006" .Site.Params.BookDateFormat) }}
 {{ if or .Date .Params.tags }}
 <div>
 {{ with .Date}}

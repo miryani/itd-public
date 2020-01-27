@@ -87,7 +87,7 @@ Once your chosen application is installed:
 #### Directions for FileZilla
 1. Open the application From the top navigation, select Edit Click on "Settings" Click on "SFTP" Click "Add key file" Use Windows Explorer to navigate to the file that holds your previously saved Private Key (.ppk) file. Select the file and click "Open" Click OK
 
-2. Enter **XXXXXXXX** in the "host" field
+2. Enter **dmd-ftp.dmdconnects.com** in the "host" field
 
 3. Enter the **DMD supplied username + property name**. in the "username" field Example: dmd-username.dmd-property
 
@@ -106,7 +106,7 @@ Once your chosen application is installed:
 #### Directions for WinSCP
 1. Open the application From the Login window click on the "Advanced" drop down button Click "Advanced" In the Advanced Site Settings window, clicks "Authentication" under "SSH" In the "Private key file" field click the button on the far right Navigate to the location of your saved Private Key File, select the file and click "Open" Click "OK" and you will be returned to the Login window
 
-2. Enter **XXXXXXXX** in the "host" field
+2. Enter **dmd-ftp.dmdconnects.com** in the "host" field
 
 3. In the "port" field, enter 22
 

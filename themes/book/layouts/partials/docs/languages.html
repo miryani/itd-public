@@ -1,11 +1,11 @@
 <!-- Merge home and current page translations -->
-{{ $langs := dict }}
+<!-- {{ $langs := dict }}
 {{ range .Site.Home.AllTranslations }}
   {{ $langs = merge $langs (dict .Language.Lang .) }}
 {{ end }}
 {{ range .Translations }}
   {{ $langs = merge $langs (dict .Language.Lang .) }}
-{{ end }}
+{{ end }} -->
 
 <div class="book-languages">
 
@@ -13,7 +13,7 @@
     <li class="flex">
       <img src="{{ "svg/translate.svg" | relURL }}" class="book-icon" alt="Languages" />
       {{ $.Site.Language.LanguageName }}
-    </li> 
+    </li>
   </ul>
 
   <ul class="book-languages-list">
